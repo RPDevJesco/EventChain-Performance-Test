@@ -1,146 +1,116 @@
-### M4 iMac with 16GB of RAM running macOS Tahoe Version 26.0.1
+### M2 MacBook Pro with 16GB of RAM running macOS Tahoe Version 26.0.1
 
-/Users/rpdevstudios/CLionProjects/eventchain_test/cmake-build-debug/eventchain_test
+/Users/gdmejesco/CLionProjects/eventchain_test/cmake-build-debug/eventchain_test
 ===========================================
 Dijkstra's Algorithm: EventChains vs Traditional
 ===========================================
-
 ========================================
 Benchmark: 100 nodes, 500 edges
 ========================================
-
 --- Traditional Dijkstra ---
-Time: 0.011 ms (11500 ns)
+Time: 0.014 ms (13958 ns)
 Memory: 2024 bytes (3 allocations)
-
 --- EventChains (Bare) ---
-Time: 0.019 ms (18625 ns)
+Time: 0.023 ms (23375 ns)
 Memory: 2028 bytes (4 allocations)
 Context lookups: 13
-
 --- EventChains (Full Middleware) ---
-Time: 0.012 ms (12333 ns)
+Time: 0.019 ms (19458 ns)
 Memory: 2028 bytes (4 allocations)
 Context lookups: 13
 Middleware calls: 0
 Event wrapping overhead: 0 ns (estimated)
-
 --- Overhead Analysis ---
-Traditional (baseline): 0.011 ms
-EventChains (bare): 0.019 ms (+62.0% overhead)
-EventChains (full): 0.012 ms (+7.2% overhead)
-
+Traditional (baseline): 0.014 ms
+EventChains (bare): 0.023 ms (+67.5% overhead)
+EventChains (full): 0.019 ms (+39.4% overhead)
 Overhead breakdown:
-Event wrapping: +62.0% (+7125 ns)
-Context lookups: +2.3% (260 ns, 13 lookups)
-Middleware calls: -54.7% (-6292 ns, 0 calls)
-
+Event wrapping: +67.5% (+9417 ns)
+Context lookups: +1.9% (260 ns, 13 lookups)
+Middleware calls: -28.1% (-3917 ns, 0 calls)
 --- Verification ---
 Results match: YES
-
 ========================================
 Benchmark: 500 nodes, 2500 edges
 ========================================
-
 --- Traditional Dijkstra ---
-Time: 0.073 ms (73500 ns)
+Time: 0.139 ms (139459 ns)
 Memory: 10024 bytes (3 allocations)
-
 --- EventChains (Bare) ---
-Time: 0.095 ms (95333 ns)
+Time: 0.085 ms (84583 ns)
 Memory: 10028 bytes (4 allocations)
 Context lookups: 13
-
 --- EventChains (Full Middleware) ---
-Time: 0.058 ms (58334 ns)
+Time: 0.089 ms (89500 ns)
 Memory: 10028 bytes (4 allocations)
 Context lookups: 13
 Middleware calls: 0
 Event wrapping overhead: 0 ns (estimated)
-
 --- Overhead Analysis ---
-Traditional (baseline): 0.073 ms
-EventChains (bare): 0.095 ms (+29.7% overhead)
-EventChains (full): 0.058 ms (-20.6% overhead)
-
+Traditional (baseline): 0.139 ms
+EventChains (bare): 0.085 ms (-39.3% overhead)
+EventChains (full): 0.089 ms (-35.8% overhead)
 Overhead breakdown:
-Event wrapping: +29.7% (+21833 ns)
-Context lookups: +0.4% (260 ns, 13 lookups)
-Middleware calls: -50.3% (-36999 ns, 0 calls)
-
+Event wrapping: -39.3% (-54876 ns)
+Context lookups: +0.2% (260 ns, 13 lookups)
+Middleware calls: +3.5% (+4917 ns, 0 calls)
 --- Verification ---
 Results match: YES
-
 ========================================
 Benchmark: 1000 nodes, 5000 edges
 ========================================
-
 --- Traditional Dijkstra ---
-Time: 0.146 ms (146417 ns)
+Time: 0.171 ms (170583 ns)
 Memory: 20024 bytes (3 allocations)
-
 --- EventChains (Bare) ---
-Time: 0.157 ms (156958 ns)
+Time: 0.181 ms (181417 ns)
 Memory: 20028 bytes (4 allocations)
 Context lookups: 13
-
 --- EventChains (Full Middleware) ---
-Time: 0.111 ms (110500 ns)
+Time: 0.276 ms (276208 ns)
 Memory: 20028 bytes (4 allocations)
 Context lookups: 13
 Middleware calls: 0
 Event wrapping overhead: 0 ns (estimated)
-
 --- Overhead Analysis ---
-Traditional (baseline): 0.146 ms
-EventChains (bare): 0.157 ms (+7.2% overhead)
-EventChains (full): 0.111 ms (-24.5% overhead)
-
+Traditional (baseline): 0.171 ms
+EventChains (bare): 0.181 ms (+6.4% overhead)
+EventChains (full): 0.276 ms (+61.9% overhead)
 Overhead breakdown:
-Event wrapping: +7.2% (+10541 ns)
+Event wrapping: +6.4% (+10834 ns)
 Context lookups: +0.2% (260 ns, 13 lookups)
-Middleware calls: -31.7% (-46458 ns, 0 calls)
-
+Middleware calls: +55.6% (+94791 ns, 0 calls)
 --- Verification ---
 Results match: YES
-
 ========================================
 Benchmark: 2000 nodes, 10000 edges
 ========================================
-
 --- Traditional Dijkstra ---
-Time: 0.324 ms (323916 ns)
+Time: 0.374 ms (373875 ns)
 Memory: 40024 bytes (3 allocations)
-
 --- EventChains (Bare) ---
-Time: 0.324 ms (324125 ns)
+Time: 0.377 ms (376875 ns)
 Memory: 40028 bytes (4 allocations)
 Context lookups: 13
-
 --- EventChains (Full Middleware) ---
-Time: 0.261 ms (260958 ns)
+Time: 0.372 ms (371667 ns)
 Memory: 40028 bytes (4 allocations)
 Context lookups: 13
 Middleware calls: 0
 Event wrapping overhead: 0 ns (estimated)
-
 --- Overhead Analysis ---
-Traditional (baseline): 0.324 ms
-EventChains (bare): 0.324 ms (+0.1% overhead)
-EventChains (full): 0.261 ms (-19.4% overhead)
-
+Traditional (baseline): 0.374 ms
+EventChains (bare): 0.377 ms (+0.8% overhead)
+EventChains (full): 0.372 ms (-0.6% overhead)
 Overhead breakdown:
-Event wrapping: +0.1% (+209 ns)
+Event wrapping: +0.8% (+3000 ns)
 Context lookups: +0.1% (260 ns, 13 lookups)
-Middleware calls: -19.5% (-63167 ns, 0 calls)
-
+Middleware calls: -1.4% (-5208 ns, 0 calls)
 --- Verification ---
 Results match: YES
-
 Process finished with exit code 0
 
-
-/Users/rpdevstudios/CLionProjects/eventchain_test/cmake-build-debug/eventchain_test
+/Users/gdmejesco/CLionProjects/eventchain_test/cmake-build-debug/eventchain_test
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
@@ -175,11 +145,11 @@ SECTION 1: Performance Benchmarks
 │ Minimal Chain (1 Event, No Middleware)                      │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  10000                                          │
-│ Total Time:  1.527                                       ms │
-│ Average:     0.000153                                    ms │
+│ Total Time:  2.687                                       ms │
+│ Average:     0.000269                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.002930                                    ms │
-│ Throughput:  6548361                                 ops/sec │
+│ Max:         0.008057                                    ms │
+│ Throughput:  3721606                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 ✓ Completed 10000 iterations successfully
 
@@ -191,44 +161,44 @@ SECTION 1: Performance Benchmarks
 │ Chain with 5 Events                                         │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.705                                       ms │
-│ Average:     0.000705                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.002930                                    ms │
-│ Throughput:  1418774                                 ops/sec │
+│ Total Time:  1.495                                       ms │
+│ Average:     0.001495                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.003906                                    ms │
+│ Throughput:  668953                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 10 Events                                        │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  1.229                                       ms │
-│ Average:     0.001229                                    ms │
-│ Min:         0.000977                                    ms │
-│ Max:         0.002930                                    ms │
-│ Throughput:  813829                                  ops/sec │
+│ Total Time:  2.676                                       ms │
+│ Average:     0.002676                                    ms │
+│ Min:         0.001953                                    ms │
+│ Max:         0.048828                                    ms │
+│ Throughput:  373654                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 50 Events                                        │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  5.002                                       ms │
-│ Average:     0.005002                                    ms │
-│ Min:         0.003906                                    ms │
-│ Max:         0.021973                                    ms │
-│ Throughput:  199902                                  ops/sec │
+│ Total Time:  9.047                                       ms │
+│ Average:     0.009047                                    ms │
+│ Min:         0.007812                                    ms │
+│ Max:         0.023926                                    ms │
+│ Throughput:  110529                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 100 Events                                       │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  9.132                                       ms │
-│ Average:     0.009132                                    ms │
-│ Min:         0.007812                                    ms │
-│ Max:         0.026123                                    ms │
-│ Throughput:  109504                                  ops/sec │
+│ Total Time:  16.138                                      ms │
+│ Average:     0.016138                                    ms │
+│ Min:         0.014893                                    ms │
+│ Max:         0.076904                                    ms │
+│ Throughput:  61967                                   ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════════╗
@@ -239,44 +209,44 @@ SECTION 1: Performance Benchmarks
 │ Chain with 1 Middleware Layers                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.225                                       ms │
-│ Average:     0.000225                                    ms │
+│ Total Time:  0.262                                       ms │
+│ Average:     0.000262                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.001221                                    ms │
-│ Throughput:  4442516                                 ops/sec │
+│ Max:         0.011963                                    ms │
+│ Throughput:  3820896                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 4 Middleware Layers                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.215                                       ms │
-│ Average:     0.000215                                    ms │
+│ Total Time:  0.253                                       ms │
+│ Average:     0.000253                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.001221                                    ms │
-│ Throughput:  4654545                                 ops/sec │
+│ Max:         0.007080                                    ms │
+│ Throughput:  3949855                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 8 Middleware Layers                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.222                                       ms │
-│ Average:     0.000222                                    ms │
+│ Total Time:  0.248                                       ms │
+│ Average:     0.000248                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.002930                                    ms │
-│ Throughput:  4506051                                 ops/sec │
+│ Max:         0.001953                                    ms │
+│ Throughput:  4027532                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Chain with 16 Middleware Layers                             │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.198                                       ms │
-│ Average:     0.000198                                    ms │
+│ Total Time:  0.263                                       ms │
+│ Average:     0.000263                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.001221                                    ms │
-│ Throughput:  5056790                                 ops/sec │
+│ Max:         0.005127                                    ms │
+│ Throughput:  3806691                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════════╗
@@ -287,44 +257,44 @@ SECTION 1: Performance Benchmarks
 │ Context: 100 Set Operations                                 │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  10000                                          │
-│ Total Time:  185.903                                     ms │
-│ Average:     0.018590                                    ms │
-│ Min:         0.015869                                    ms │
-│ Max:         0.164062                                    ms │
-│ Throughput:  53792                                   ops/sec │
+│ Total Time:  262.852                                     ms │
+│ Average:     0.026285                                    ms │
+│ Min:         0.023926                                    ms │
+│ Max:         0.179932                                    ms │
+│ Throughput:  38044                                   ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Context: 100 Get Operations                                 │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  10000                                          │
-│ Total Time:  163.835                                     ms │
-│ Average:     0.016384                                    ms │
-│ Min:         0.013916                                    ms │
-│ Max:         0.091797                                    ms │
-│ Throughput:  61037                                   ops/sec │
+│ Total Time:  227.796                                     ms │
+│ Average:     0.022780                                    ms │
+│ Min:         0.021973                                    ms │
+│ Max:         0.066895                                    ms │
+│ Throughput:  43899                                   ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Context: 100 Has Operations (Fast)                          │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  10000                                          │
-│ Total Time:  161.546                                     ms │
-│ Average:     0.016155                                    ms │
-│ Min:         0.013916                                    ms │
-│ Max:         0.058105                                    ms │
-│ Throughput:  61902                                   ops/sec │
+│ Total Time:  227.339                                     ms │
+│ Average:     0.022734                                    ms │
+│ Min:         0.020996                                    ms │
+│ Max:         0.072021                                    ms │
+│ Throughput:  43987                                   ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Context: 100 Has Operations (Constant-Time)                 │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  10000                                          │
-│ Total Time:  1500.874                                    ms │
-│ Average:     0.150087                                    ms │
-│ Min:         0.135010                                    ms │
-│ Max:         0.257080                                    ms │
-│ Throughput:  6663                                    ops/sec │
+│ Total Time:  1915.881                                    ms │
+│ Average:     0.191588                                    ms │
+│ Min:         0.185059                                    ms │
+│ Max:         0.645020                                    ms │
+│ Throughput:  5220                                    ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ═══════════════════════════════════════════════════════════════
@@ -336,10 +306,10 @@ SECTION 2: Stress Tests
 ╚═══════════════════════════════════════════════════════════════╝
 Adding 1024 events to chain...
 
-✓ Successfully added 1024 events in 0.16 ms
+✓ Successfully added 1024 events in 0.23 ms
 Executing chain with 1024 events...
 ✓ Chain executed successfully in 0.01 ms
-✓ Average time per event: 0.000006 ms
+✓ Average time per event: 0.000014 ms
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║           STRESS TEST: Maximum Middleware Layers              ║
@@ -347,41 +317,41 @@ Executing chain with 1024 events...
 Adding 16 middleware layers to chain...
 ✓ Successfully added 16 middleware layers
 Executing chain with 16 middleware layers...
-✓ Chain executed successfully in 0.001221 ms
+✓ Chain executed successfully in 0.000977 ms
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║          STRESS TEST: Maximum Context Entries                 ║
 ╚═══════════════════════════════════════════════════════════════╝
 Adding 512 entries to context...
 Progress: 500/512 entries added
-✓ Successfully added 512 entries in 0.37 ms
+✓ Successfully added 512 entries in 0.57 ms
 ✓ Memory usage: 24506 bytes
 Testing retrieval of all 512 entries...
-✓ Retrieved all entries in 0.42 ms
-✓ Average retrieval time: 0.000823 ms per entry
+✓ Retrieved all entries in 0.47 ms
+✓ Average retrieval time: 0.000918 ms per entry
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║        STRESS TEST: Rapid Creation/Destruction Cycles         ║
 ╚═══════════════════════════════════════════════════════════════╝
 Creating and destroying 10000 chains...
 
-✓ Completed 10000 cycles in 17.17 ms
-✓ Average cycle time: 0.001717 ms
-✓ Throughput: 582480 cycles/sec
+✓ Completed 10000 cycles in 63.69 ms
+✓ Average cycle time: 0.006369 ms
+✓ Throughput: 157006 cycles/sec
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║              STRESS TEST: Memory Pressure                      ║
 ╚═══════════════════════════════════════════════════════════════╝
 Creating 100 chains with heavy memory usage...
 
-✓ Created 100 chains in 0.25 ms
+✓ Created 100 chains in 0.38 ms
 Executing all chains...
 
-✓ Executed 100 chains in 7.80 ms
-✓ Average execution time: 0.078000 ms per chain
+✓ Executed 100 chains in 12.09 ms
+✓ Average execution time: 0.120940 ms per chain
 Destroying all chains...
-✓ Destroyed 100 chains in 0.75 ms
-✓ Total test time: 8.80 ms
+✓ Destroyed 100 chains in 3.39 ms
+✓ Total test time: 15.87 ms
 
 ╔═══════════════════════════════════════════════════════════════╗
 ║          STRESS TEST: Error Handling Overhead                 ║
@@ -391,22 +361,22 @@ Destroying all chains...
 │ All Events Succeed (Strict Mode)                            │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  1.001                                       ms │
-│ Average:     0.001001                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.001953                                    ms │
-│ Throughput:  999268                                  ops/sec │
+│ Total Time:  1.757                                       ms │
+│ Average:     0.001757                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.003906                                    ms │
+│ Throughput:  569047                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ Some Events Fail (Lenient Mode)                             │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.911                                       ms │
-│ Average:     0.000911                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.002197                                    ms │
-│ Throughput:  1097241                                 ops/sec │
+│ Total Time:  1.489                                       ms │
+│ Average:     0.001489                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.023193                                    ms │
+│ Throughput:  671475                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════════╗
@@ -417,55 +387,55 @@ Destroying all chains...
 │ 0 Middleware Layers (5 Events)                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.547                                       ms │
-│ Average:     0.000547                                    ms │
+│ Total Time:  0.981                                       ms │
+│ Average:     0.000981                                    ms │
 │ Min:         0.000000                                    ms │
-│ Max:         0.001221                                    ms │
-│ Throughput:  1828571                                 ops/sec │
+│ Max:         0.015869                                    ms │
+│ Throughput:  1019666                                 ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ 4 Middleware Layers (5 Events)                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.755                                       ms │
-│ Average:     0.000755                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.001953                                    ms │
-│ Throughput:  1325137                                 ops/sec │
+│ Total Time:  1.133                                       ms │
+│ Average:     0.001133                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.002197                                    ms │
+│ Throughput:  882759                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ 8 Middleware Layers (5 Events)                              │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.822                                       ms │
-│ Average:     0.000822                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.001221                                    ms │
-│ Throughput:  1216152                                 ops/sec │
+│ Total Time:  1.237                                       ms │
+│ Average:     0.001237                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.002197                                    ms │
+│ Throughput:  808208                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ 12 Middleware Layers (5 Events)                             │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.889                                       ms │
-│ Average:     0.000889                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.003906                                    ms │
-│ Throughput:  1124348                                 ops/sec │
+│ Total Time:  1.596                                       ms │
+│ Average:     0.001596                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.008057                                    ms │
+│ Throughput:  626683                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
 │ 16 Middleware Layers (5 Events)                             │
 ├─────────────────────────────────────────────────────────────┤
 │ Iterations:  1000                                           │
-│ Total Time:  0.944                                       ms │
-│ Average:     0.000944                                    ms │
-│ Min:         0.000000                                    ms │
-│ Max:         0.002197                                    ms │
-│ Throughput:  1059767                                 ops/sec │
+│ Total Time:  1.478                                       ms │
+│ Average:     0.001478                                    ms │
+│ Min:         0.000977                                    ms │
+│ Max:         0.007080                                    ms │
+│ Throughput:  676466                                  ops/sec │
 └─────────────────────────────────────────────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════════╗

@@ -1,4 +1,4 @@
-Windows machine is running AMD Ryzen 9 7959X with 128GB of RAM
+### Windows machine with AMD Ryzen 9 7959X with 128GB of RAM running Windows 11 Pro build version 26100.6899
 
 It should be noted that the Windows version needed this function to be implemented in eventchain.c:
 ```c++
