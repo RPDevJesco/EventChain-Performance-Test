@@ -11,6 +11,26 @@
 #define INITIAL_CAPACITY 8
 
 /* ==================== Utility Functions ==================== */
+/**
+ * @brief Creates a newly allocated copy of a string up to a specified length.
+ *
+ * This function duplicates at most `n` characters from the input string `s`,
+ * ensuring the result is null-terminated. It behaves like `strndup()` on
+ * POSIX systems and can be used as a portable replacement.
+ *
+ * @param s The source null-terminated string to copy.
+ * @param n The maximum number of characters to duplicate from `s`.
+ * @return A pointer to the newly allocated, null-terminated copy of `s`,
+ *         or NULL if memory allocation fails.
+ */
+char* strndup(const char* s, size_t n) {
+    size_t len = strnlen(s, n);
+    char* dup = malloc(len + 1);
+    if (!dup) return NULL;
+    memcpy(dup, s, len);
+    dup[len] = '\0';
+    return dup;
+}
 
 /**
  * Safe string length with maximum
