@@ -1,0 +1,32 @@
+# Exclude build artifacts and output directories
+build-output/
+build/
+build-*/
+*.o
+*.obj
+*.exe
+*.out
+
+# Exclude version control
+.git/
+.gitignore
+
+# Exclude IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Exclude Docker-related files (don't need them inside the image)
+.dockerignore
+
+# Exclude documentation that's not needed for builds
+*.pdf
+*.docx
+
+# Exclude temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
